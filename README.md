@@ -18,6 +18,7 @@ note: make your own handlers idgaf
         ~handlerRegister() = default;
 	}
   
+       //string pattern is just instantiated hadnlerRegister<std::string_view>
   	inline std::map<int, stringPattern> opcodeStringPatterns = { //could've made it a std::set but shrug
         	{ARTIMETIC_INSTRUCTION, { R"(\b(L_\d+_\[L_\d+_(?:\[L_\d+_\])?\])\s=\s([L_\d\[\]\s]+(?=([+*\/\-%])))\3\s(L_\d+_\[L_\d+_(?:\[L_\d+_\])?\])[\r\n;])", "$1=artimetic_instr_handler($2,\'$3\',$4)" }},
         	{LEN_INSTRUCTION, { R"((L_\d+_\[L_\d+_(?:\[L_\d+_\])?\])\s*?=\s*?#(L_\d+_\[L_\d+_(?:\[L_\d+_\])?\])[\r\n;])", "$1=len_handler($2)"}},
