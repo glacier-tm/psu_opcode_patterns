@@ -1,5 +1,5 @@
 # psu opcode patterns
-made by cyclops
+made by cyclops.
 note: make your own handlers idgaf
 
 ```c++
