@@ -13,7 +13,7 @@ note: make your own handlers idgaf
 		constexpr auto getHandler() const noexcept {
 			return this->handler;
 		}
-        handlerRegister(const std::string_view&& s, T&& handler) noexcept : pattern{ std::move(s) }, handler(std::forward<T>(handler)) { }; //move the rvalue outside
+        handlerRegister(std::string_view s, T&& handler) noexcept : pattern{ std::move(s) }, handler(std::forward<T>(handler)) { }; //move the rvalue outside
         ~handlerRegister() = default;
 	}
   
