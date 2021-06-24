@@ -3,6 +3,7 @@ made by cyclops
 note: make your own handlers idgaf
 
 ```c++
+      // just add your opcode priority enum here etc etc
 	template <class T>
 	struct handlerRegister final { // reg
 		static_assert(std::is_function<T>::value || std::is_constructible<std::string, T>::value, "need a string/function handler.");
