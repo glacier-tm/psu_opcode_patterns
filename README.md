@@ -1,6 +1,7 @@
-# made by Cyclops
-my opcode patterns (dats from may 2021) :
-make your own handlers idgaf
+# psu opcode patterns
+made by cyclops
+note: make your own handlers idgaf
+
 ```c++
 	template <class T>
 	struct handlerRegister final { // reg
