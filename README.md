@@ -1,16 +1,16 @@
-# psu opcode patterns
+# psu opcode patterns (from may 2021)
 made by cyclops.
 note: make your own handlers idgaf
 
 ```c++
       // just add your opcode priority enum here etc etc
 	template <class T>
-	struct handlerRegister final { // reg
+	struct handlerRegister final { // to register a handler
 		static_assert(std::is_function<T>::value || std::is_constructible<std::string, T>::value, "need a string/function handler.");
 	private:
 		T handler;
 	public:
-		std::string_view pattern{};
+		std::string_view pattern{}; // default initialized
 		constexpr auto getHandler() const noexcept {
 			return this->handler;
 		}
