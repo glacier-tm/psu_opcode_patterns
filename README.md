@@ -4,17 +4,17 @@ note: make your own handlers idgaf
 
 ```c++
       // just add your opcode priority enum here etc etc
-	template <class T>
+	template <class handlerType>
 	struct handlerRegister final { // to register a handler
-		static_assert(std::is_function<T>::value || std::is_constructible<std::string, T>::value, "need a string/function handler.");
+		static_assert(std::is_function<handlerType>::value || std::is_constructible<std::string, handlerType>::value, "need a string/function handler."); // can't also be a POD type
 	private:
-		T handler;
+		handlerType handler;
 	public:
 		std::string_view pattern{}; // default initialized
 		constexpr auto getHandler() const noexcept {
 			return this->handler;
 		}
-        handlerRegister(std::string_view s, T&& handler) noexcept : pattern{ std::move(s) }, handler(std::forward<T>(handler)) { }; //move the rvalue outside
+        handlerRegister(std::string_view s, handlerType&& handler) noexcept : pattern{ std::move(s) }, handler(std::forward<handlerType>(handler)) { }; //handler as a rvalue handlertype
         ~handlerRegister() = default;
 	}
   
