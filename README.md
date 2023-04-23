@@ -1,7 +1,7 @@
 # psu opcode patterns (from may 2021)
 made by cyclops. note: make your own handlers idgaf
 
-```
+```cpp
       // just add your opcode priority enum here etc etc
 	template <class handlerType>
 	struct handlerRegister final { // to register a handler
