@@ -1,4 +1,4 @@
-# psu opcode patterns (from may 2021)
+# psu opcode patterns (from may 2021) *MIRROR*
 made by cyclops. note: make your own handlers idgaf
 
 ```cpp
